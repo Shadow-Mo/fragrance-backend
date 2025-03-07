@@ -10,6 +10,7 @@ const allowedOrigins = [
     // Include localhost for development if needed
     'http://localhost:3000',
     'http://localhost:3001',
+    "https://forever-fragrance.vercel.app",
 ];
 
 // Improved CORS configuration
