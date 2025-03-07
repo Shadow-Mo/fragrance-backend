@@ -35,7 +35,7 @@ const corsOptions = {
 };
 
 // Apply CORS middleware before other middleware
-
+app.use(cors(corsOptions));
 
 // Remove the redundant headers middleware since CORS middleware handles it
 // app.use((req, res, next) => {
@@ -56,10 +56,8 @@ app.use((err, req, res, next) => {
     next(err);
 });
 
-app.use(cors(corsOptions));
 const port = process.env.PORT || 3001;
 const connectToMongoDB = require('./database/connection');
-
 
 connectToMongoDB();
 app.use(express.static('../app/build'));
